@@ -14,33 +14,33 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              {% if page.url == '{{ site.baseurl }}/wingtsun.html' %}
+              {% if page.url == '{{ site.baseurl | prepend: site.github.url }}/wingtsun.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/wingtsun.html">Wing Tsun</a>
+                    <a href="{{ site.baseurl | prepend: site.github.url }}/wingtsun.html">Wing Tsun</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/escrima.html' %}
+              {% if page.url == '{{ site.baseurl | prepend: site.github.url }}/escrima.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/escrima.html">Escrima</a>
+                    <a href="{{ site.baseurl | prepend: site.github.url }}/escrima.html">Escrima</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/coursenfants.html' %}
+              {% if page.url == '{{ site.baseurl | prepend: site.github.url }}/coursenfants.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/coursenfants.html">Cours Enfants</a>
+                    <a href="{{ site.baseurl | prepend: site.github.url }}/coursenfants.html">Cours Enfants</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/contact.html' %}
+              {% if page.url == '{{ site.baseurl | prepend: site.github.url }}/contact.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/contact.html">Contact</a>
+                    <a href="{{ site.baseurl | prepend: site.github.url }}/contact.html">Contact</a>
                 </li>
             </ul>
         </div>
