@@ -186,6 +186,14 @@ header {
     -o-background-size: cover;
 }
 
+header .background-image {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
 header .header-content {
     position: relative;
     width: 100%;
