@@ -14,33 +14,33 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              {% if page.url == '/wingtsun.html' %}
+              {% if page.url == '{{ site.github.url }}/wingtsun.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="/wingtsun.html">Wing Tsun</a>
+                    <a href="{{ site.github.url }}/wingtsun.html">Wing Tsun</a>
                 </li>
-              {% if page.url == '/escrima.html' %}
+              {% if page.url == '{{ site.github.url }}/escrima.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="/escrima.html">Escrima</a>
+                    <a href="{{ site.github.url }}/escrima.html">Escrima</a>
                 </li>
-              {% if page.url == '/coursenfants.html' %}
+              {% if page.url == '{{ site.github.url }}/coursenfants.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="/coursenfants.html">Cours Enfants</a>
+                    <a href="{{ site.github.url }}/coursenfants.html">Cours Enfants</a>
                 </li>
-              {% if page.url == '/contact.html' %}
+              {% if page.url == '{{ site.github.url }}/contact.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="/contact.html">Contact</a>
+                    <a href="{{ site.github.url }}/contact.html">Contact</a>
                 </li>
             </ul>
         </div>
