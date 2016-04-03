@@ -28,12 +28,26 @@
               {% endif %}
                     <a href="{{ site.baseurl }}/escrima.html">Escrima</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/coursenfants.html' %}
+              {% if page.url == '{{ site.baseurl }}/enfants.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/coursenfants.html">Cours Enfants</a>
+                    <a href="{{ site.baseurl }}/enfants.html">Enfants</a>
+                </li>
+              {% if page.url == '{{ site.baseurl }}/ecoles.html' %}
+                <li class="active">
+              {% else %}
+                <li>
+              {% endif %}
+                    <a href="{{ site.baseurl }}/ecoles.html">Écoles</a>
+                </li>
+              {% if page.url == '{{ site.baseurl }}/galeriephotos.html' %}
+                <li class="active">
+              {% else %}
+                <li>
+              {% endif %}
+                    <a href="{{ site.baseurl }}/galeriephotos.html">Galerie photos</a>
                 </li>
               {% if page.url == '{{ site.baseurl }}/contact.html' %}
                 <li class="active">
