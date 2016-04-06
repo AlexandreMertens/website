@@ -29,7 +29,7 @@ portfolio:
 ---
 <section class="bg-dark">
   <div class="text-center">
-    <h1>Portfolio</h1>
+    <h1>Galerie de photos</h1>
   </div>
 </section>
 
@@ -38,19 +38,42 @@ portfolio:
     <div class="row no-gutter">
       {% for item in page.portfolio %}
       <div class="col-lg-4 col-sm-6">
-        <a href="{{ item.url }}" class="portfolio-box">
-          <img src="{{ item.image_path }}" class="img-responsive" alt="{{ item.project }}">
-          <div class="portfolio-box-caption">
-            <div class="portfolio-box-caption-content">
-              <div class="project-category text-faded">
-                {{ item.category }}
-              </div>
-              <div class="project-name">
-                {{ item.project }}
+        <div class="popup-gallery">
+          <a href="{{ site.baseurl }}/{{ item.image_path }}" class="portfolio-box">
+            <img src="{{ item.image_path }}" class="img-responsive" alt="{{ item.project }}">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  {{ item.category }}
+                </div>
+                <div class="project-name">
+                  {{ item.project }}
+                </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+          	$('.popup-gallery').magnificPopup({
+          		delegate: 'a',
+          		type: 'image',
+          		tLoading: 'Loading image #%curr%...',
+          		mainClass: 'mfp-img-mobile',
+          		gallery: {
+          			enabled: true,
+          			navigateByImgClick: true,
+          			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+          		},
+          		image: {
+          			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+          			titleSrc: function(item) {
+          				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+          			}
+          		}
+        	  });
+          });
+        </script>
       </div>
       {% endfor %}
     </div>

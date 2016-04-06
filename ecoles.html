@@ -1,106 +1,81 @@
 ---
 layout: default
-title: Les écoles
+title: Portfolio
+portfolio:
+  - image_path: img/portfolio/1.jpg
+    category: Web Design
+    project: Apple
+    url: http://apple.com
+  - image_path: img/portfolio/2.jpg
+    category: SEO
+    project: Tesla
+    url: http://www.teslamotors.com/
+  - image_path: img/portfolio/3.jpg
+    category: SEO
+    project: Optimizely
+    url: https://www.optimizely.com/
+  - image_path: img/portfolio/4.jpg
+    category: Content Writing
+    project: GitHub
+    url: https://github.com/
+  - image_path: img/portfolio/5.jpg
+    category: Web Design
+    project: Dropbox
+    url: https://www.dropbox.com
+  - image_path: img/portfolio/6.jpg
+    category: Social Media Marketing
+    project: Uber
+    url: https://www.uber.com/
 ---
 <section class="bg-dark">
   <div class="text-center">
-    <h1>Portfolio</h1>
+    <h1>Nos écoles</h1>
   </div>
 </section>
 
 <section class="no-padding" id="portfolio">
-    <div class="container-fluid">
-        <div class="row no-gutter">
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      {% for item in page.portfolio %}
+      <div class="col-lg-4 col-sm-6">
+        <div class="popup-gallery">
+          <a href="{{ site.baseurl }}/{{ item.image_path }}" class="portfolio-box">
+            <img src="{{ item.image_path }}" class="img-responsive" alt="{{ item.project }}">
+            <div class="portfolio-box-caption">
+              <div class="portfolio-box-caption-content">
+                <div class="project-category text-faded">
+                  {{ item.category }}
+                </div>
+                <div class="project-name">
+                  {{ item.project }}
+                </div>
+              </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                    <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Category
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+          </a>
         </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+          	$('.popup-gallery').magnificPopup({
+          		delegate: 'a',
+          		type: 'image',
+          		tLoading: 'Loading image #%curr%...',
+          		mainClass: 'mfp-img-mobile',
+          		gallery: {
+          			enabled: true,
+          			navigateByImgClick: true,
+          			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+          		},
+          		image: {
+          			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+          			titleSrc: function(item) {
+          				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+          			}
+          		}
+        	  });
+          });
+        </script>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
