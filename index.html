@@ -15,9 +15,24 @@ title: Home Page
         </div>
     </header>
 
+    <a class="simple-ajax-popup" href="{{ site.baseurl }}/site-assets/test-ajax-2.html">Load another content via ajax</a>
+    <script type="text/javascript">
+      $(document).ready(function() {
 
+      	$('.simple-ajax-popup-align-top').magnificPopup({
+      		type: 'ajax',
+      		alignTop: true,
+      		overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+      	});
 
-<!-- 
+      	$('.simple-ajax-popup').magnificPopup({
+      		type: 'ajax'
+      	});
+
+      });
+    </script>
+
+<!--
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
