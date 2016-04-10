@@ -14,47 +14,61 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              {% if page.url == '{{ site.baseurl }}/wingtsun.html' %}
+              {% if page.url == '/wingtsun.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
                     <a href="{{ site.baseurl }}/wingtsun.html">Wing Tsun</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/escrima.html' %}
+              {% if page.url == '/escrima.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
                     <a href="{{ site.baseurl }}/escrima.html">Escrima</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/enfants.html' %}
+              {% if page.url == '/enfants.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
                     <a href="{{ site.baseurl }}/enfants.html">Enfants</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/ecoles.html' %}
+              {% if page.url == '/ecoles.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
                     <a href="{{ site.baseurl }}/ecoles.html">Écoles</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/evenements.html' %}
+              {% if page.url == '/calendar.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
-                    <a href="{{ site.baseurl }}/evenements.html">Galerie photos</a>
+                    <a href="{{ site.baseurl }}/calendar.html">Calendrier</a>
                 </li>
-              {% if page.url == '{{ site.baseurl }}/contact.html' %}
+              {% if page.url == '/evenements.html' %}
+                <li class="active">
+              {% else %}
+                <li>
+              {% endif %}
+                    <a href="{{ site.baseurl }}/evenements.html">Évènements passés</a>
+                </li>
+              {% if page.url == '/contact.html' %}
                 <li class="active">
               {% else %}
                 <li>
               {% endif %}
                     <a href="{{ site.baseurl }}/contact.html">Contact</a>
+                </li>
+              {% if page.url == '/links.html' %}
+                <li class="active">
+              {% else %}
+                <li>
+              {% endif %}
+                    <a href="{{ site.baseurl }}/links.html">Liens</a>
                 </li>
             </ul>
         </div>

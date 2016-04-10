@@ -1,1 +1,4 @@
 baseurl: /wingtsunwallonie
+
+markdown: kramdown
+future: true

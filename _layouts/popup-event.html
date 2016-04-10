@@ -17,12 +17,15 @@
 	}
 	</style>
 	<div class="ajcol">
-		<img src="img/past_events/Schwarz_10_15/pic-02.JPG"/>
+		<img src="{{ site.baseurl }}/{{ page.img }}"/>
 	</div>
 	<div class="ajcol" style="line-height: 1.231;">
 		<div style="padding: 1em">
-			<h1>Séminaire en présence de Dai-Sifu Schwarz</h1>
-		    <p></p>
+			<h1>{{  page.title }}</h1>
+			{{ page.content }}
+			{% if page.gallery %}
+			  <a href="{{ site.baseurl }}/{{ page.gallery }}/gallery.html" class="btn btn-primary btn-xl page-scroll">Voir toutes les photos</a>
+			{% endif %}
 		</div>
 	</div>
 	<div style="clear:both; line-height: 0;"></div>

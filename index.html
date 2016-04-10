@@ -10,38 +10,18 @@ title: Home Page
                 <hr>
                 <p>Nos écoles proposent des cours de Wing Tsun, un art martial d'auto-défense adapté à tous.</p>
                 <p>Nous proposons également des cours d'initiation au maniement des armes pour la défense suivant le système Escrima</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
+                <a href="{{ site.baseurl }}/ecoles.html" class="btn btn-primary btn-xl page-scroll">Nos écoles</a>
             </div>
         </div>
     </header>
 
-    <a class="simple-ajax-popup" href="{{ site.baseurl }}/site-assets/test-ajax-2.html">Load another content via ajax</a>
-    <script type="text/javascript">
-      $(document).ready(function() {
 
-      	$('.simple-ajax-popup-align-top').magnificPopup({
-      		type: 'ajax',
-      		alignTop: true,
-      		overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
-      	});
-
-      	$('.simple-ajax-popup').magnificPopup({
-      		type: 'ajax'
-      	});
-
-      });
-    </script>
-
-<!--
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                <h2>Envie de venir essayer ?</h2>
+                <a href="{{ site.baseurl }}/contact.html" class="btn btn-default btn-xl wow tada">Contactez-nous !</a>
             </div>
-            <p>{{ site.baseurl }}</p>
-            <p>{{ site.github.url }}</p>
-            <p>{{ site.url }}</p>
 
         </div>
-    </aside> -->
+    </aside>

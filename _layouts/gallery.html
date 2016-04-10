@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<section class="bg-dark" id="gallery">
+  <div class="container">
+
+          <div class="row">
+
+              <div class="col-lg-12">
+                  <h1 class="page-header">{{ page.title }}</h1>
+                  {% if page.date %}
+                    <p>{{ page.date }}</p>
+                  {% endif %}
+              </div>
+
+              {% for image in site.static_files %}
+                {% if image.path contains page.gallery.path %}
+                  {% unless image.path contains page.gallery.thumb %}
+                    {% unless image.path contains 'html' %}
+                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <div class="popup-gallery">
+                          <a class="thumbnail" href="{{ site.baseurl }}/{{ image.path }}">
+                            <img class="img-responsive" src="{{ site.baseurl }}/{{ image.path | replace:'.jpg', page.gallery.thumb }}" alt="" >
+                          </a>
+                        </div>
+                      </div>
+                    {% endunless %}
+                  {% endunless %}
+                {% endif %}
+              {% endfor %}
+
+              <script type="text/javascript">
+                $(document).ready(function() {
+                	$('.popup-gallery').magnificPopup({
+                		delegate: 'a',
+                		type: 'image',
+                		tLoading: 'Loading image #%curr%...',
+                		mainClass: 'mfp-img-mobile',
+                		gallery: {
+                			enabled: true,
+                			navigateByImgClick: true,
+                			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+                		},
+                		image: {
+                			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                			titleSrc: function(item) {
+                				return '<small>{{ page.title }}</small>';
+                			}
+                		}
+              	  });
+                });
+              </script>
+              <style type="text/css">
+                /* padding-bottom and top for image */
+                .mfp-no-margins img.mfp-img {
+                  padding: 0;
+                }
+                /* position of shadow behind the image */
+                .mfp-no-margins .mfp-figure:after {
+                  top: 0;
+                  bottom: 0;
+                }
+                /* padding for main container */
+                .mfp-no-margins .mfp-container {
+                  padding: 0;
+                }
+              </style>
+          </div>
+    </div>
+</section>
